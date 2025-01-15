@@ -20,6 +20,9 @@ int main() {
 	// create instance of classRoster
 	ClassRoster classRoster;
 	// add each student to classRoster
+for(string student : studentData){
+   classRoster.add(student); //fix?
+}
 
 	//TODO
 
