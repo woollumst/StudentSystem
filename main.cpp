@@ -18,7 +18,7 @@ int main() {
 	cout << "Name: Toby Woollums" << endl;
 
 	// create instance of classRoster
-	ClassRoster classRoster;
+	Roster classRoster;
 	// add each student to classRoster
 for(string student : studentData){
    classRoster.add(student); //fix?
