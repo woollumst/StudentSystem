@@ -11,7 +11,13 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
    
 }
 void Roster::remove(string studentID) {
-	
+	for(int i = 0; i < classRosterArray.size(); i++){
+      if(classRosterArray[i]->getStudentID() == studentID){
+         delete classRosterArray[i];
+         return;
+      }
+   }
+   cout << "Student was not found." << endl;
 }
 void Roster::printAll() {
 	// A1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab]daysInCourse: {35, 40, 55} Degree Program: Security.
