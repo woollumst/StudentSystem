@@ -7,6 +7,7 @@ class Roster {
 	// classRosterArray : an array of pointers to hold data from studentDataTable
 	
 	Student* classRosterArray[5]; // ?? Prob needs work. Pointer array?
+	int rosterIndex;
 	
 	// parse studentDataTable to create student object for each student in table, populate to classRosterArray
 
