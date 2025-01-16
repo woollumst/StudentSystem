@@ -32,13 +32,17 @@ void Roster::printAll() {
 void Roster::printAverageDaysInCourse(string studentID) {
    //find student from student ID, print average days in courses
    int average = 0;
+   int tempArr[3];
    for(int i = 0; i < 5; i++){
       if(classRosterArray[i]->getStudentID() == studentID){
-         for(int j = 0; j < 3; j++){
-            average += classRosterArray[i]->
-         }
+         tempArr = &classRosterArray[i]->getDaysInCourses();
       }
    }
+   for(int j = 0; j < 3; j++){
+      average += tempArr[j];
+   }
+   average /= 3;
+   return average;
 }
 void Roster::printInvalidEmails() {
    //add email validation
