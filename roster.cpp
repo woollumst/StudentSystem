@@ -7,6 +7,12 @@ Roster::Roster() {
    rosterIndex = 0;
 }
 
+Roster::~Roster(){ // Destructor
+   for(int i = 0; i < 5; i++){
+      delete classRosterArray[i];
+   }
+}
+
 // classRosterArray : an array of pointers to hold data from studentDataTable
 // parse studentDataTable to create student object for each student in table, populate to classRosterArray
 
