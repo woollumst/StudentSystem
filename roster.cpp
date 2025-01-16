@@ -4,13 +4,15 @@ Roster::Roster() {
    for(int i = 0; i < classRosterArray.size; i++){
       classRosterArray[i] = null;
    }
+   rosterIndex = 0;
 }
 
 // classRosterArray : an array of pointers to hold data from studentDataTable
 // parse studentDataTable to create student object for each student in table, populate to classRosterArray
 
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
-   
+   classRosterArray[rosterIndex] = new Student(studentID, firstName, lastName, emailAddress, age, {daysInCourse1, daysInCourse2, daysInCourse3}, degreeProgram);
+   rosterIndex++;
 }
 void Roster::remove(string studentID) {
 	for(int i = 0; i < classRosterArray.size(); i++){
