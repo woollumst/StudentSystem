@@ -32,7 +32,7 @@ int main() {
 	//loop through classRosterArray and for each element: 
 	// classRoster.printAverageDaysInCourse(currentStudent.getStudentID());
 	for (int i = 0; i < classRosterArray.size(); i++) {
-		classRoster.printAverageDaysInCourse(classRosterArray[i].getStudentID());
+		classRoster.printAverageDaysInCourse(classRosterArray[i]->getStudentID());
 	}
 
 	classRoster.printByDegreeProgram(SOFTWARE);
