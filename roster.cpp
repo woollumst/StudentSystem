@@ -1,7 +1,9 @@
 #include "roster.h";
 
 Roster::Roster() {
-	
+   for(int i = 0; i < classRosterArray.size; i++){
+      classRosterArray[i] = null;
+   }
 }
 
 // classRosterArray : an array of pointers to hold data from studentDataTable
