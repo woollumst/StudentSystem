@@ -1,7 +1,7 @@
 #include "roster.h";
 
 Roster::Roster() {
-   for(int i = 0; i < classRosterArray.size; i++){
+   for(int i = 0; i < 5; i++){
       classRosterArray[i] = null;
    }
    rosterIndex = 0;
@@ -21,7 +21,7 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
    rosterIndex++;
 }
 void Roster::remove(string studentID) {
-	for(int i = 0; i < classRosterArray.size(); i++){
+	for(int i = 0; i < 5; i++){
       if(classRosterArray[i]->getStudentID() == studentID){
          delete classRosterArray[i];
          return;
