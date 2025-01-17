@@ -1,10 +1,12 @@
 #include "roster.h";
 
 Roster::Roster() {
-   for(int i = 0; i < 5; i++){
-      classRosterArray[i] = null;
-   }
+   *classRosterArray = new Student[5];
    rosterIndex = 0;
+}
+
+Roster::Roster(int size){
+   *classRosterArray = new Student[size];
 }
 
 Roster::~Roster(){ // Destructor
