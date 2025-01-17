@@ -6,7 +6,7 @@ using namespace std;
 class Roster {
 	// classRosterArray : an array of pointers to hold data from studentDataTable
 	
-	Student* classRosterArray[5]; // ?? Prob needs work. Pointer array?
+	Student* classRosterArray; // ?? Prob needs work. Pointer array?
 	int rosterIndex;
 	
 	// parse studentDataTable to create student object for each student in table, populate to classRosterArray
@@ -14,6 +14,7 @@ class Roster {
 
 public:
 	Roster();
+	Roster(int size);
 	~Roster();
 	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
 	void remove(string studentID);
