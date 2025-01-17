@@ -7,6 +7,7 @@ Roster::Roster() {
 
 Roster::Roster(int size){
    *classRosterArray = new Student[size];
+   rosterIndex = 0;
 }
 
 Roster::~Roster(){ // Destructor
