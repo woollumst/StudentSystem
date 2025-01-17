@@ -24,6 +24,7 @@ void Roster::remove(string studentID) {
 	for(int i = 0; i < 5; i++){
       if(classRosterArray[i]->getStudentID() == studentID){
          delete classRosterArray[i];
+         rosterIndex--;
          return;
       }
    }
