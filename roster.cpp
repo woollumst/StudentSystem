@@ -52,7 +52,22 @@ void Roster::printAverageDaysInCourse(string studentID) {
    return average;
 }
 void Roster::printInvalidEmails() {
-   //add email validation
+   //add email validation. should have @ and . but no spaces
+   for(int i = 0; i < 5; i++){ // check each student
+      //parse email string, maybe booleans?
+      bool emailAt = false, emailPeriod = false, emailSpace = false;
+      string email = classRosterArray[i]->getEmail();
+      for(int j = 0; j < email.size(); j++){
+         if(email.at(j) == '@')
+            emailAt = true;
+         else if(email.at(j) == '.')
+            emailPeriod = true;
+         else if(email.at(j) == ' ')
+            emailSpace = true;
+      }
+      if(!((emailAt && emailPeriod) && !emailSpace))
+         cout << "Student " << classRosterArray[i]->getStudentID() << " has an invalid email: " << email << endl;
+   }
 }
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
    for(Student student : Roster){
