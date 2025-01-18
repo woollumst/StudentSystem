@@ -28,8 +28,9 @@ int main() {
 	// add each student to classRoster
 	while (studentData[rosterIndex] != null){
 		string currStudent = studentData[rosterIndex]; //temp string to hold each student's data
-		string studentID, firstName, lastName, email, degreeProgram; //temp variables to read into student object
-  int[3] days;
+		string studentID, firstName, lastName, email; //temp variables to read into student object
+  int age, days1, days2, days3;
+		DegreeProgram degreeProgram;
 
 		studentID = currStudent.substr(0, 2);
 		currStudent = currStudent.substr(3, currStudent.length() - 3);
@@ -39,17 +40,25 @@ int main() {
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
 		email = currStudent.substr(0, currStudent.find(',') - 1);
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
-		age = currStudent.substr(0, currStudent.find(',') - 1);
+		age = static_cast<int> currStudent.substr(0, currStudent.find(',') - 1);
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
 		//int array
-		days[0] = currStudent.substr(0, currStudent.find(',') - 1);
+		days1 = static_cast<int> currStudent.substr(0, currStudent.find(',') - 1);
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
-		days[1] = currStudent.substr(0, currStudent.find(',') - 1);
+		days2 = static_cast<int> currStudent.substr(0, currStudent.find(',') - 1);
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
-		days[2] = currStudent.substr(0, currStudent.find(',') - 1);
+		days3 = static_cast<int> currStudent.substr(0, currStudent.find(',') - 1);
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
-		degreeProgram = currStudent;
-		classRoster.add(studentID, firstName, lastName, email, days, degreeProgram); //fix?
+		switch (currStudent){
+			case ("SOFTWARE"): 
+				degreeProgram = SOFTWARE;
+			case ("NETWORK"):
+				degreeProgram = NETWORK;
+			case ("SECURITY"):
+				degreeProgram = SECURITY;
+		}
+
+		classRoster.add(studentID, firstName, lastName, email, age, days1, days2, days3, degreeProgram); //fix?
 	}
 	
 	//classRoster.printAll();
