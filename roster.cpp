@@ -1,12 +1,12 @@
 #include "roster.h";
 
 Roster::Roster() {
-   *classRosterArray = new Student[5];
+   classRosterArray = new Student[5];
    rosterIndex = 0;
 }
 
 Roster::Roster(int size){
-   *classRosterArray = new Student[size];
+   classRosterArray = new Student[size];
    rosterIndex = 0;
 }
 

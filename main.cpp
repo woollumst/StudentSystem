@@ -21,7 +21,7 @@ int main() {
 	Roster classRoster;
 	// add each student to classRoster
  for(string student : studentData){
-   classRoster.add(student); //fix?
+   classRoster.add(student[0], ); //fix?
  }
 
 	//TODO

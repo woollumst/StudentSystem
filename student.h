@@ -17,6 +17,7 @@ class Student {
 		//Constructors
 	public:
 		Student(string studentID, string firstName, string lastName, string email, int age, int daysToCompleteCourse[], DegreeProgram degreeProgram);
+		Student();
 
 		//Member Functions
 	public:

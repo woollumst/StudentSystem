@@ -12,6 +12,10 @@ Student::Student(string studentID, string firstName, string lastName, string ema
 	this->degreeProgram = degreeProgram;
 }
 
+Student::Student() {
+	//default constructor?
+}
+
 //Member Functions
 void Student::print() { //Finish print statement
 	cout << this->studentID << "\tFirst Name: " << this->firstName << "\tLast Name: " << this->lastName << "\tAge: " << this->age << "\tdaysInCourse: {" << this->daysToCompleteCourse[0] << ", " << this->daysToCompleteCourse[1] << ", " << this->daysToCompleteCourse[2] << "} Degree Program: " << this->degreeProgram << endl;
