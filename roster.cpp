@@ -40,8 +40,8 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 void Roster::remove(string studentID) { // NEEDS FIXING
 	for(int i = 0; i < classSize; i++){
       if(classRosterArray[i].getStudentID() == studentID){
-         //delete classRosterArray[i]; // ??? wrong??
-         //rosterIndex--;
+         delete (*classRosterArray[i]);
+         classRosterArray[i] = nullptr;
          return;
       }
    }
