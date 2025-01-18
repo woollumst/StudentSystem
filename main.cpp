@@ -75,7 +75,7 @@ int main() {
 	classRoster.printAll();
 	classRoster.remove("A3"); //should handle error, saying: "Such a student with this ID was not found."
 	*/
-	//delete classRoster.classRosterArray; // BROKEN?
+	//delete[] classRoster.classRosterArray; // BROKEN?
 	
 	return 0;
 }
