@@ -27,9 +27,10 @@ int main() {
 
 	// add each student to classRoster
 	while (studentData[rosterIndex] != null){
-		string currStudent = studentData[rosterIndex];
-		string studentID, firstName, lastName, email, degreeProgram;
+		string currStudent = studentData[rosterIndex]; //temp string to hold each student's data
+		string studentID, firstName, lastName, email, degreeProgram; //temp variables to read into student object
   int[3] days;
+
 		studentID = currStudent.substr(0, 2);
 		currStudent = currStudent.substr(3, currStudent.length() - 3);
 		firstName = currStudent.substr(0, currStudent.find(',') - 1);
@@ -37,6 +38,8 @@ int main() {
   lastName = currStudent.substr(0, currStudent.find(',') - 1);
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
 		email = currStudent.substr(0, currStudent.find(',') - 1);
+		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
+		age = currStudent.substr(0, currStudent.find(',') - 1);
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
 		//int array
 		days[0] = currStudent.substr(0, currStudent.find(',') - 1);
@@ -46,11 +49,8 @@ int main() {
 		days[2] = currStudent.substr(0, currStudent.find(',') - 1);
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
 		degreeProgram = currStudent;
-
 		classRoster.add(studentID, firstName, lastName, email, days, degreeProgram); //fix?
 	}
-
-	//TODO
 	
 	//classRoster.printAll();
 	//classRoster.printInvalidEmails();
@@ -66,7 +66,7 @@ int main() {
 	classRoster.printAll();
 	classRoster.remove("A3"); //should handle error, saying: "Such a student with this ID was not found."
 	*/
-	//delete classRoster.classRosterArray; // BROKEN
+	//delete classRoster.classRosterArray; // BROKEN?
 	
 	return 0;
 }
