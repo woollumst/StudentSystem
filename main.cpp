@@ -29,14 +29,14 @@ int main() {
 	while (studentData[rosterIndex] != null){
 		string currStudent = studentData[rosterIndex]; //temp string to hold each student's data
 		string studentID, firstName, lastName, email; //temp variables to read into student object
-  int age, days1, days2, days3;
+		int age, days1, days2, days3;
 		DegreeProgram degreeProgram;
 
 		studentID = currStudent.substr(0, 2);
 		currStudent = currStudent.substr(3, currStudent.length() - 3);
 		firstName = currStudent.substr(0, currStudent.find(',') - 1);
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
-  lastName = currStudent.substr(0, currStudent.find(',') - 1);
+		lastName = currStudent.substr(0, currStudent.find(',') - 1);
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
 		email = currStudent.substr(0, currStudent.find(',') - 1);
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
