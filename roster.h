@@ -1,13 +1,15 @@
 #pragma once
+#include <iostream>
 #include "degree.h"
 #include "student.h"
 using namespace std;
 
 class Roster {
 	// classRosterArray : an array of pointers to hold data from studentDataTable
-	
+public:
 	Student* classRosterArray; // ?? Prob needs work. Pointer array?
 	int rosterIndex;
+	int classSize;
 	
 	// parse studentDataTable to create student object for each student in table, populate to classRosterArray
 

@@ -10,10 +10,20 @@ Student::Student(string studentID, string firstName, string lastName, string ema
 	this->age = age;
 	*this->daysToCompleteCourse = *daysToCompleteCourse; // fix?
 	this->degreeProgram = degreeProgram;
-}
+} //Student(studentID, firstName, lastName, emailAddress, age, courseArr, degreeProgram)
 
 Student::Student() {
 	//default constructor?
+	this->studentID = "B0";
+	this->firstName = "Unknown";
+	this->lastName = "N/A";
+	this->email = "N/A";
+	this->age = 0;
+	//*this->daysToCompleteCourse = {0, 0, 0}; // fix?
+}
+
+Student::~Student() {
+	cout << "Student deconstructor. " << this->studentID << endl;
 }
 
 //Member Functions

@@ -18,6 +18,7 @@ class Student {
 	public:
 		Student(string studentID, string firstName, string lastName, string email, int age, int daysToCompleteCourse[], DegreeProgram degreeProgram);
 		Student();
+		~Student();
 
 		//Member Functions
 	public:
