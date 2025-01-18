@@ -19,15 +19,36 @@ int main() {
 	cout << "Name: Toby Woollums" << endl;
 
 	// studentData->size() is unacceptable, yields bad results
-	// cout << studentData->size() << endl;
-	int size = studentData->size(); // F I X
-
-	// create instance of classRoster
+	int size = sizeof(studentData); // F I X
+	cout << endl << endl << "Size of array: " << size << endl << endl;
+	
+// create instance of classRoster
 	Roster classRoster(size);
+
 	// add each student to classRoster
-	//for(string student : studentData){
-		//classRoster.add(student); //fix?
-	//}
+	while (studentData[rosterIndex] != null){
+		string currStudent = studentData[rosterIndex];
+		string studentID, firstName, lastName, email, degreeProgram;
+  int[3] days;
+		studentID = currStudent.substr(0, 2);
+		currStudent = currStudent.substr(3, currStudent.length() - 3);
+		firstName = currStudent.substr(0, currStudent.find(',') - 1);
+		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
+  lastName = currStudent.substr(0, currStudent.find(',') - 1);
+		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
+		email = currStudent.substr(0, currStudent.find(',') - 1);
+		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
+		//int array
+		days[0] = currStudent.substr(0, currStudent.find(',') - 1);
+		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
+		days[1] = currStudent.substr(0, currStudent.find(',') - 1);
+		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
+		days[2] = currStudent.substr(0, currStudent.find(',') - 1);
+		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
+		degreeProgram = currStudent;
+
+		classRoster.add(studentID, firstName, lastName, email, days, degreeProgram); //fix?
+	}
 
 	//TODO
 	
