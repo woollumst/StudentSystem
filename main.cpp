@@ -28,8 +28,8 @@ int main() {
 	// add each student to classRoster
 	while (studentData[rosterIndex] != null){
 		string currStudent = studentData[rosterIndex]; //temp string to hold each student's data
-		string studentID, firstName, lastName, email, degreeProgram; //temp variables to read into student object
-  int[3] days;
+		string studentID, firstName, lastName, email, age, degreeProgram; //temp variables to read into student object
+		int days[3];
 
 		studentID = currStudent.substr(0, 2);
 		currStudent = currStudent.substr(3, currStudent.length() - 3);
