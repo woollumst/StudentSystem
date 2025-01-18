@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\wooll\\source\\repos\\StudentSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9351202D-4441-4851-A648-F063532D591F}|StudentSystem.vcxproj|C:\\Users\\wooll\\source\\repos\\StudentSystem\\student.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9351202D-4441-4851-A648-F063532D591F}|StudentSystem.vcxproj|solutionrelative:student.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9351202D-4441-4851-A648-F063532D591F}|StudentSystem.vcxproj|C:\\Users\\wooll\\source\\repos\\StudentSystem\\roster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9351202D-4441-4851-A648-F063532D591F}|StudentSystem.vcxproj|solutionrelative:roster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9351202D-4441-4851-A648-F063532D591F}|StudentSystem.vcxproj|C:\\Users\\wooll\\source\\repos\\StudentSystem\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9351202D-4441-4851-A648-F063532D591F}|StudentSystem.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -13,14 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9351202D-4441-4851-A648-F063532D591F}|StudentSystem.vcxproj|C:\\Users\\wooll\\source\\repos\\StudentSystem\\roster.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9351202D-4441-4851-A648-F063532D591F}|StudentSystem.vcxproj|solutionrelative:roster.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9351202D-4441-4851-A648-F063532D591F}|StudentSystem.vcxproj|C:\\Users\\wooll\\source\\repos\\StudentSystem\\student.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9351202D-4441-4851-A648-F063532D591F}|StudentSystem.vcxproj|solutionrelative:student.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9351202D-4441-4851-A648-F063532D591F}|StudentSystem.vcxproj|C:\\Users\\wooll\\source\\repos\\StudentSystem\\roster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9351202D-4441-4851-A648-F063532D591F}|StudentSystem.vcxproj|solutionrelative:roster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +30,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "roster.h",
               "DocumentMoniker": "C:\\Users\\wooll\\source\\repos\\StudentSystem\\roster.h",
               "RelativeDocumentMoniker": "roster.h",
@@ -46,52 +46,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "student.h",
               "DocumentMoniker": "C:\\Users\\wooll\\source\\repos\\StudentSystem\\student.h",
               "RelativeDocumentMoniker": "student.h",
               "ToolTip": "C:\\Users\\wooll\\source\\repos\\StudentSystem\\student.h",
               "RelativeToolTip": "student.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-13T05:18:07.965Z"
+              "WhenOpened": "2025-01-13T05:18:07.965Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\wooll\\source\\repos\\StudentSystem\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\wooll\\source\\repos\\StudentSystem\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAB0AAABaAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAwD4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-13T05:19:40.436Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "student.cpp",
               "DocumentMoniker": "C:\\Users\\wooll\\source\\repos\\StudentSystem\\student.cpp",
               "RelativeDocumentMoniker": "student.cpp",
               "ToolTip": "C:\\Users\\wooll\\source\\repos\\StudentSystem\\student.cpp",
               "RelativeToolTip": "student.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-13T05:17:42.195Z"
+              "WhenOpened": "2025-01-13T05:17:42.195Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "roster.cpp",
               "DocumentMoniker": "C:\\Users\\wooll\\source\\repos\\StudentSystem\\roster.cpp",
               "RelativeDocumentMoniker": "roster.cpp",
               "ToolTip": "C:\\Users\\wooll\\source\\repos\\StudentSystem\\roster.cpp",
               "RelativeToolTip": "roster.cpp",
-              "ViewState": "AgIAABoAAAAAAAAAAAAwwFYAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwBoAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-13T05:48:43.663Z"
+              "WhenOpened": "2025-01-13T05:48:43.663Z",
+              "EditorCaption": ""
             }
           ]
         }

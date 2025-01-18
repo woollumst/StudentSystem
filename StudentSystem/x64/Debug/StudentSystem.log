@@ -1,3 +1,6 @@
 ﻿  main.cpp
-C:\Users\wooll\source\repos\StudentSystem\main.cpp(22,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  roster.cpp
+C:\Users\wooll\source\repos\StudentSystem\roster.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  student.cpp
+  Generating Code...
   StudentSystem.vcxproj -> C:\Users\wooll\source\repos\StudentSystem\x64\Debug\StudentSystem.exe

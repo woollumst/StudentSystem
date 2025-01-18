@@ -11,7 +11,7 @@ class Student {
 		string lastName;
 		string email;
 		int age;
-		int daysToCompleteCourse[3];
+		int daysToCompleteCourse[3] = { 0, 0, 0 };
 		DegreeProgram degreeProgram;
 
 		//Constructors

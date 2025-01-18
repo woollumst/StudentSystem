@@ -8,7 +8,7 @@ Student::Student(string studentID, string firstName, string lastName, string ema
 	this->lastName = lastName;
 	this->email = email;
 	this->age = age;
-	*this->daysToCompleteCourse = *daysToCompleteCourse; // fix?
+	setDaysToCompleteCourses({daysToCompleteCourse[0], daysToCompleteCourse[1] , daysToCompleteCourse[2] }); // fix?
 	this->degreeProgram = degreeProgram;
 } //Student(studentID, firstName, lastName, emailAddress, age, courseArr, degreeProgram)
 
@@ -19,6 +19,9 @@ Student::Student() {
 	this->lastName = "N/A";
 	this->email = "N/A";
 	this->age = 0;
+	this->degreeProgram = SOFTWARE; // default value
+	//*this->daysToCompleteCourse = new int[3];
+	//this->daysToCompleteCourse[3] = {10, 10, 10};
 	//*this->daysToCompleteCourse = {0, 0, 0}; // fix?
 }
 

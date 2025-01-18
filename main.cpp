@@ -19,51 +19,54 @@ int main() {
 	cout << "Name: Toby Woollums" << endl;
 
 	// studentData->size() is unacceptable, yields bad results
-	int size = sizeof(studentData); // F I X
+	//int size = sizeof(studentData); // F I X
+	int size = 5;
 	cout << endl << endl << "Size of array: " << size << endl << endl;
 	
 // create instance of classRoster
 	Roster classRoster(size);
 
 	// add each student to classRoster
-	while (studentData[rosterIndex] != null){
-		string currStudent = studentData[rosterIndex]; //temp string to hold each student's data
+	for (int i = 0; i < size; i ++) {
+		string currStudent = studentData[i]; //temp string to hold each student's data
 		string studentID, firstName, lastName, email; //temp variables to read into student object
+		DegreeProgram degreeProgram = SECURITY;
+
 		int age, days1, days2, days3;
-		DegreeProgram degreeProgram;
 
 		studentID = currStudent.substr(0, 2);
 		currStudent = currStudent.substr(3, currStudent.length() - 3);
-		firstName = currStudent.substr(0, currStudent.find(',') - 1);
+		firstName = currStudent.substr(0, currStudent.find(','));
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
-		lastName = currStudent.substr(0, currStudent.find(',') - 1);
+		lastName = currStudent.substr(0, currStudent.find(','));
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
-		email = currStudent.substr(0, currStudent.find(',') - 1);
+		email = currStudent.substr(0, currStudent.find(','));
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
-		age = static_cast<int> currStudent.substr(0, currStudent.find(',') - 1);
+		//age = currStudent.substr(0, currStudent.find(',') - 1);
+		age = 20;
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
 		//int array
-		days1 = static_cast<int> currStudent.substr(0, currStudent.find(',') - 1);
+		//days1 = static_cast<int> currStudent.substr(0, currStudent.find(',') - 1);
+		days1 = 10;
+		days2 = 20;
+		days3 = 30;
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
-		days2 = static_cast<int> currStudent.substr(0, currStudent.find(',') - 1);
+		//days2 = static_cast<int> currStudent.substr(0, currStudent.find(',') - 1);
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
-		days3 = static_cast<int> currStudent.substr(0, currStudent.find(',') - 1);
+		//days3 = static_cast<int> currStudent.substr(0, currStudent.find(',') - 1);
 		currStudent = currStudent.substr(currStudent.find(',') + 1, currStudent.length() - (currStudent.find(',') + 1));
-		switch (currStudent){
-			case ("SOFTWARE"): 
-				degreeProgram = SOFTWARE;
-			case ("NETWORK"):
-				degreeProgram = NETWORK;
-			case ("SECURITY"):
-				degreeProgram = SECURITY;
-		}
+		if (currStudent == "SOFTWARE")
+			DegreeProgram degreeProgram = SOFTWARE;
+		else if(currStudent == "NETWORK")
+			DegreeProgram degreeProgram = NETWORK;
+		
 
 		classRoster.add(studentID, firstName, lastName, email, age, days1, days2, days3, degreeProgram); //fix?
 	}
 	
-	//classRoster.printAll();
-	//classRoster.printInvalidEmails();
-	/*
+	classRoster.printAll();
+	classRoster.printInvalidEmails();
+	
 	//loop through classRosterArray and for each element: 
 	// classRoster.printAverageDaysInCourse(currentStudent.getStudentID());
 	for (int i = 0; i < size; i++) {
@@ -74,7 +77,7 @@ int main() {
 	classRoster.remove("A3");
 	classRoster.printAll();
 	classRoster.remove("A3"); //should handle error, saying: "Such a student with this ID was not found."
-	*/
+	
 	//delete[] classRoster.classRosterArray; // BROKEN?
 	
 	return 0;
