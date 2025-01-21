@@ -36,14 +36,16 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 void Roster::remove(string studentID) { // How to remove? 
 	for(int i = 0; i < classSize; i++){
       if(classRosterArray[i].getStudentID() == studentID){ // 
-          classRosterArray[i].setStudentID("0");
+          delete classRosterArray[i];
+          classRosterArray[i] = nullptr;
+          /*classRosterArray[i].setStudentID("0");
           classRosterArray[i].setFirstName(" \t");
           classRosterArray[i].setLastName(" \t");
           classRosterArray[i].setEmail(" ");
           classRosterArray[i].setAge(0);
           classRosterArray[i].setDegreeProgram(SECURITY);
           int temp[] = {0, 0, 0};
-          classRosterArray[i].setDaysToCompleteCourses(temp);
+          classRosterArray[i].setDaysToCompleteCourses(temp);*/
          return;
       }
    }
