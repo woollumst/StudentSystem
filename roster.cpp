@@ -13,15 +13,11 @@ Roster::Roster(int size){
 }
 
 Roster::~Roster(){ // Destructor
-    //for (int i = 0; i < classSize; i++)
-        cout << "Deallocation of classRosterArray" << endl;
+    cout << "Deallocation of classRosterArray" << endl;
 }
 
 // classRosterArray : an array of pointers to hold data from studentDataTable
 // parse studentDataTable to create student object for each student in table, populate to classRosterArray
-
-
-
 // Add a Student to the classRosterArray
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
     int courseArr[3] = {daysInCourse1, daysInCourse2, daysInCourse3};
@@ -37,11 +33,17 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 }
 
 // Remove a Student from classRosterArray
-void Roster::remove(string studentID) { // NEEDS FIXING
+void Roster::remove(string studentID) { // How to remove? 
 	for(int i = 0; i < classSize; i++){
-      if(classRosterArray[i].getStudentID() == studentID){
-         /*delete (classRosterArray[i]);
-         classRosterArray[i] = nullptr;*/
+      if(classRosterArray[i].getStudentID() == studentID){ // 
+          classRosterArray[i].setStudentID("0");
+          classRosterArray[i].setFirstName(" \t");
+          classRosterArray[i].setLastName(" \t");
+          classRosterArray[i].setEmail(" ");
+          classRosterArray[i].setAge(0);
+          classRosterArray[i].setDegreeProgram(SECURITY);
+          int temp[] = {0, 0, 0};
+          classRosterArray[i].setDaysToCompleteCourses(temp);
          return;
       }
    }
@@ -101,9 +103,16 @@ void Roster::printInvalidEmails() {
    }
 }
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
-    cout << "Students enrolled in the " << degreeProgram << " Degree Program:" << endl;
+    cout << "Students enrolled in the ";
+    if (degreeProgram == SECURITY)
+        cout << "SECURITY";
+    else if (degreeProgram == NETWORK)
+        cout << "NETWORK";
+    else if (degreeProgram == SOFTWARE)
+        cout << "SOFTWARE";
+    cout << " Degree Program:" << endl;
     for (int i = 0; i < classSize; i++) {
-      if(classRosterArray[i].getDegreeProgram() == degreeProgram)
-         classRosterArray[i].print();
+        if (classRosterArray[i].getDegreeProgram() == degreeProgram) 
+            classRosterArray[i].print();
    }
 }

@@ -3,13 +3,13 @@
 
 //Constructor
 Student::Student(string studentID, string firstName, string lastName, string email, int age, int daysToCompleteCourse[], DegreeProgram degreeProgram) {
-	this->studentID = studentID;
-	this->firstName = firstName;
-	this->lastName = lastName;
-	this->email = email;
-	this->age = age;
-	setDaysToCompleteCourses({daysToCompleteCourse[0], daysToCompleteCourse[1] , daysToCompleteCourse[2] }); // fix?
-	this->degreeProgram = degreeProgram;
+	this->setStudentID(studentID);
+	this->setFirstName(firstName);
+	this->setLastName(lastName);
+	this->setEmail(email);
+	this->setAge(age);
+	this->setDaysToCompleteCourses(daysToCompleteCourse);
+	this->setDegreeProgram(degreeProgram);
 } //Student(studentID, firstName, lastName, emailAddress, age, courseArr, degreeProgram)
 
 Student::Student() {
@@ -19,10 +19,7 @@ Student::Student() {
 	this->lastName = "N/A";
 	this->email = "N/A";
 	this->age = 0;
-	this->degreeProgram = SOFTWARE; // default value
-	//*this->daysToCompleteCourse = new int[3];
-	//this->daysToCompleteCourse[3] = {10, 10, 10};
-	//*this->daysToCompleteCourse = {0, 0, 0}; // fix?
+	this->degreeProgram = SOFTWARE; // default value ?
 }
 
 Student::~Student() {
@@ -31,7 +28,17 @@ Student::~Student() {
 
 //Member Functions
 void Student::print() { //Finish print statement
-	cout << this->studentID << "\tFirst Name: " << this->firstName << "\tLast Name: " << this->lastName << "\tAge: " << this->age << "\tdaysInCourse: {" << this->daysToCompleteCourse[0] << ", " << this->daysToCompleteCourse[1] << ", " << this->daysToCompleteCourse[2] << "} Degree Program: " << this->degreeProgram << endl;
+	cout << this->getStudentID() << "\tFirst Name: " << this->getFirstName() << "\tLast Name: " << this->getLastName() << "\tAge: " << this->getAge() << "\tdaysInCourse: {" << this->getDaysToCompleteCourses()[0] << ", ";
+	cout << this->getDaysToCompleteCourses()[1] << ", " << this->getDaysToCompleteCourses()[2] << "} Degree Program: ";
+	if (this->getDegreeProgram() == SECURITY)
+		cout << "SECURITY";
+	else if (this->getDegreeProgram() == NETWORK)
+		cout << "NETWORK";
+	else if (this->getDegreeProgram() == SOFTWARE)
+		cout << "SOFTWARE";
+	else
+		cout << "INVALID";
+	cout << endl;
 }
 
 //Accessors / Getters
@@ -73,8 +80,10 @@ void Student::setEmail(string newEmail) {
 void Student::setAge(int newAge) {
 	this->age = newAge;
 }
-void Student::setDaysToCompleteCourses(int* newDaysToCompleteCourse) {
-	*this->daysToCompleteCourse = *newDaysToCompleteCourse; //May need to look into pointers for this
+void Student::setDaysToCompleteCourses(int newDaysToCompleteCourse[]) {
+	this->daysToCompleteCourse[0] = newDaysToCompleteCourse[0]; //May need to look into pointers for this
+	this->daysToCompleteCourse[1] = newDaysToCompleteCourse[1];
+	this->daysToCompleteCourse[2] = newDaysToCompleteCourse[2];
 }
 void Student::setDegreeProgram(DegreeProgram degreeProgram) {
 	this->degreeProgram = degreeProgram;

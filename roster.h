@@ -5,14 +5,10 @@
 using namespace std;
 
 class Roster {
-	// classRosterArray : an array of pointers to hold data from studentDataTable
 public:
-	Student* classRosterArray; // ?? Prob needs work. Pointer array?
-	int rosterIndex;
-	int classSize;
-	
-	// parse studentDataTable to create student object for each student in table, populate to classRosterArray
-
+	Student* classRosterArray; // Pointer array to hold Student objects
+	int rosterIndex; // Counter variable
+	int classSize; // Array size variable
 
 public:
 	Roster();
@@ -24,4 +20,5 @@ public:
 	void printAverageDaysInCourse(string studentID);
 	void printInvalidEmails();
 	void printByDegreeProgram(DegreeProgram degreeProgram);
+	void parseStudent(string studentString[]);
 };
