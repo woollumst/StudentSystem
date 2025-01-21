@@ -55,7 +55,8 @@ void Roster::remove(string studentID) { // How to remove?
 void Roster::printAll() {
 	// A1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab]daysInCourse: {35, 40, 55} Degree Program: Security.
     for (int i = 0; i < classSize; i++) {
-      classRosterArray[i].print();
+      if(classRosterArray[i] != nullptr)
+         classRosterArray[i].print();
    }
 }
 
@@ -66,7 +67,7 @@ void Roster::printAverageDaysInCourse(string studentID) {
    bool isFound = false;
    
    for(int i = 0; i < classSize; i++){ //find correct student
-      if(classRosterArray[i].getStudentID() == studentID){
+      if((classRosterArray[i].getStudentID() == studentID) && classRosterArray[i] != nullptr){
           isFound = true;
           for(int k = 0; k < 3; k++)
             tempArr[k] = classRosterArray[i].getDaysToCompleteCourses()[k];
