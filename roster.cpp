@@ -13,7 +13,8 @@ Roster::Roster(int size){
 }
 
 Roster::~Roster(){ // Destructor
-    cout << "Deallocation of classRosterArray" << endl;
+    cout << "Roster destructor called." << endl;
+    delete[] this->classRosterArray; // Deallocate student objects and array
 }
 
 // classRosterArray : an array of pointers to hold data from studentDataTable
