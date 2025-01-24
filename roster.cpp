@@ -1,5 +1,7 @@
 #include "roster.h";
 
+
+
 Roster::Roster() {
    classRosterArray = new Student[5];
    classSize = 5;
@@ -14,7 +16,7 @@ Roster::Roster(int size){
 
 Roster::~Roster(){ // Destructor
     cout << "Roster destructor called." << endl;
-    delete[] this->classRosterArray; // Deallocate student objects and array
+    //delete[] classRosterArray; // Deallocate student objects and array
 }
 
 // classRosterArray : an array of pointers to hold data from studentDataTable
@@ -37,8 +39,8 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 void Roster::remove(string studentID) { // How to remove? 
 	for(int i = 0; i < classSize; i++){
       if(classRosterArray[i].getStudentID() == studentID){ // 
-          delete classRosterArray[i];
-          classRosterArray[i] = nullptr;
+          /*delete this->classRosterArray[i];
+          classRosterArray[i] = nullptr;*/
           /*classRosterArray[i].setStudentID("0");
           classRosterArray[i].setFirstName(" \t");
           classRosterArray[i].setLastName(" \t");
@@ -56,8 +58,8 @@ void Roster::remove(string studentID) { // How to remove?
 void Roster::printAll() {
 	// A1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab]daysInCourse: {35, 40, 55} Degree Program: Security.
     for (int i = 0; i < classSize; i++) {
-      if(classRosterArray[i] != nullptr)
-         classRosterArray[i].print();
+      /*if(classRosterArray[i] == nullptr)
+         classRosterArray[i].print();*/
    }
 }
 
@@ -68,7 +70,7 @@ void Roster::printAverageDaysInCourse(string studentID) {
    bool isFound = false;
    
    for(int i = 0; i < classSize; i++){ //find correct student
-      if((classRosterArray[i].getStudentID() == studentID) && classRosterArray[i] != nullptr){
+      if((classRosterArray[i].getStudentID() == studentID) /*&& classRosterArray[i] != nullptr*/){
           isFound = true;
           for(int k = 0; k < 3; k++)
             tempArr[k] = classRosterArray[i].getDaysToCompleteCourses()[k];
