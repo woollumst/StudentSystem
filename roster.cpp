@@ -39,9 +39,18 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 void Roster::remove(string studentID) { // How to remove? 
 	for(int i = 0; i < classSize; i++){
       if(classRosterArray[i].getStudentID() == studentID){ // 
-          /*delete this->classRosterArray[i];
-          classRosterArray[i] = nullptr;*/
-          /*classRosterArray[i].setStudentID("0");
+          // Move "deleted" element to end, reduce index
+          /*for (int j = i; j < classSize; j++) {
+              classRosterArray[j] = classRosterArray[j + 1];
+          }*/
+          //classSize--;
+
+          cout << "Student found for removal. Need to add remove func." << endl;
+
+          
+          //if we're just zeroing all the data
+          /*
+          classRosterArray[i].setStudentID("0");
           classRosterArray[i].setFirstName(" \t");
           classRosterArray[i].setLastName(" \t");
           classRosterArray[i].setEmail(" ");
@@ -58,8 +67,8 @@ void Roster::remove(string studentID) { // How to remove?
 void Roster::printAll() {
 	// A1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab]daysInCourse: {35, 40, 55} Degree Program: Security.
     for (int i = 0; i < classSize; i++) {
-      /*if(classRosterArray[i] == nullptr)
-         classRosterArray[i].print();*/
+      /*if(classRosterArray[i] == nullptr)*/
+         classRosterArray[i].print();
    }
 }
 

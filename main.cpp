@@ -55,11 +55,8 @@ int main() {
 	cout << "Name: Toby Woollums" << endl << endl;
 	int size = 5;
 
-	// create instance of classRoster
-	Roster classRoster(size);
-
-	// Parse and add each student to classRoster
-	parseStudents(size, classRoster);
+	Roster classRoster(size); // create instance of classRoster
+	parseStudents(size, classRoster); // Parse and add each student to classRoster
 	classRoster.printAll();
 	cout << endl;
 	classRoster.printInvalidEmails();
@@ -77,7 +74,7 @@ int main() {
 	classRoster.printAll();
 	classRoster.remove("A3"); //should handle error, saying: "Such a student with this ID was not found."
 	
-	//delete[] classRoster.classRosterArray; // Deallocate student objects and array
+	delete[] classRoster.classRosterArray; // Deallocate student objects and array
 	
 	return 0;
 }
