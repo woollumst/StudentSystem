@@ -40,12 +40,18 @@ void Roster::remove(string studentID) { // How to remove?
 	for(int i = 0; i < classSize; i++){
       if(classRosterArray[i].getStudentID() == studentID){ // 
           // Move "deleted" element to end, reduce index
-          /*for (int j = i; j < classSize; j++) {
-              classRosterArray[j] = classRosterArray[j + 1];
-          }*/
-          //classSize--;
+          for (int j = i; j < classSize; j++) {
+              classRosterArray[j].setStudentID(classRosterArray[j + 1].getStudentID());
+              classRosterArray[j].setFirstName(classRosterArray[j + 1].getFirstName());
+              classRosterArray[j].setLastName(classRosterArray[j + 1].getLastName());
+              classRosterArray[j].setEmail(classRosterArray[j + 1].getEmail());
+              classRosterArray[j].setAge(classRosterArray[j + 1].getAge());
+              classRosterArray[j].setDaysToCompleteCourses(classRosterArray[j + 1].getDaysToCompleteCourses());
+              classRosterArray[j].setDegreeProgram(classRosterArray[j + 1].getDegreeprogram());
+          }
+          classSize--;
 
-          cout << "Student found for removal. Need to add remove func." << endl;
+          cout << "Student found for removal. Testing remove func." << endl;
 
           
           //if we're just zeroing all the data
