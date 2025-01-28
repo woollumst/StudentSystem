@@ -19,6 +19,9 @@ Student::Student() {
 	this->lastName = "N/A";
 	this->email = "N/A";
 	this->age = 0;
+	this->daysToCompleteCourse[0] = 0;
+	this->daysToCompleteCourse[1] = 0;
+	this->daysToCompleteCourse[2] = 0;
 	this->degreeProgram = SOFTWARE; // default value ?
 }
 

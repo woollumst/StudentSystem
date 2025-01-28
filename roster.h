@@ -6,12 +6,11 @@ using namespace std;
 
 class Roster {
 public:
-	Student* classRosterArray; // Pointer array to hold Student objects
+	Student* classRosterArray = new Student[5]; // Pointer array to hold Student objects
 	int rosterIndex; // Counter variable
 	int classSize; // Array size variable
 
 public:
-	Roster();
 	Roster(int size);
 	~Roster();
 	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
@@ -20,5 +19,4 @@ public:
 	void printAverageDaysInCourse(string studentID);
 	void printInvalidEmails();
 	void printByDegreeProgram(DegreeProgram degreeProgram);
-	void parseStudent(string studentString[]);
 };

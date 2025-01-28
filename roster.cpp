@@ -1,27 +1,16 @@
 #include "roster.h";
 
-
-
-Roster::Roster() {
-   classRosterArray = new Student[5];
-   classSize = 5;
-   rosterIndex = 0;
-}
-
 Roster::Roster(int size){
-   classRosterArray = new Student[size];
+   Student* classRosterArray = new Student[size];
    classSize = size;
    rosterIndex = 0;
 }
 
 Roster::~Roster(){ // Destructor
     cout << "Roster destructor called." << endl;
-    //delete[] classRosterArray; // Deallocate student objects and array
 }
 
-// classRosterArray : an array of pointers to hold data from studentDataTable
-// parse studentDataTable to create student object for each student in table, populate to classRosterArray
-// Add a Student to the classRosterArray
+// Add a Student to the classRosterArray. Parsed from Main
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
     int courseArr[3] = {daysInCourse1, daysInCourse2, daysInCourse3};
     
@@ -37,76 +26,54 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 
 // Remove a Student from classRosterArray
 void Roster::remove(string studentID) { // How to remove? 
-	for(int i = 0; i < classSize; i++){
-      if(classRosterArray[i].getStudentID() == studentID){ // 
-          // Move "deleted" element to end, reduce index
-          for (int j = i; j < classSize; j++) {
-              classRosterArray[j].setStudentID(classRosterArray[j + 1].getStudentID());
-              classRosterArray[j].setFirstName(classRosterArray[j + 1].getFirstName());
-              classRosterArray[j].setLastName(classRosterArray[j + 1].getLastName());
-              classRosterArray[j].setEmail(classRosterArray[j + 1].getEmail());
-              classRosterArray[j].setAge(classRosterArray[j + 1].getAge());
-              classRosterArray[j].setDaysToCompleteCourses(classRosterArray[j + 1].getDaysToCompleteCourses());
-              classRosterArray[j].setDegreeProgram(classRosterArray[j + 1].getDegreeprogram());
-          }
-          classSize--;
-
-          cout << "Student found for removal. Testing remove func." << endl;
-
-          
-          //if we're just zeroing all the data
-          /*
-          classRosterArray[i].setStudentID("0");
-          classRosterArray[i].setFirstName(" \t");
-          classRosterArray[i].setLastName(" \t");
-          classRosterArray[i].setEmail(" ");
-          classRosterArray[i].setAge(0);
-          classRosterArray[i].setDegreeProgram(SECURITY);
-          int temp[] = {0, 0, 0};
-          classRosterArray[i].setDaysToCompleteCourses(temp);*/
-         return;
+    for(int i = 0; i < classSize; i++){
+        if(classRosterArray[i].getStudentID() == studentID){ // Search by Student ID
+            cout << "Student " << studentID << " found for deletion..." << endl << endl;
+            for (int j = i; j < classSize-1; j++) {
+                classRosterArray[j] = classRosterArray[j + 1]; // Moving other elements up
+            }
+            classSize--; // "Deleting" last element
+            return;
       }
    }
-   cout << "Student was not found." << endl;
+   cout << "Student " << studentID << " was not found." << endl << endl;
 }
 
 void Roster::printAll() {
-	// A1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab]daysInCourse: {35, 40, 55} Degree Program: Security.
+    cout << "All Students: " << endl;
     for (int i = 0; i < classSize; i++) {
-      /*if(classRosterArray[i] == nullptr)*/
-         classRosterArray[i].print();
-   }
+        classRosterArray[i].print(); // A1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab]daysInCourse: {35, 40, 55} Degree Program: Security.
+    }
+    cout << endl;
 }
 
-void Roster::printAverageDaysInCourse(string studentID) {
-   //find student from student ID, print average days in courses 
-   int average = 0;
-   int tempArr[3];
-   bool isFound = false;
+void Roster::printAverageDaysInCourse(string studentID) {//find student from student ID, print average days in courses 
+    int average = 0;
+    int tempArr[3];
+    bool isFound = false;
+    
+    for(int i = 0; i < classSize; i++){ //find correct student
+        if((classRosterArray[i].getStudentID() == studentID) /*&& classRosterArray[i] != nullptr*/){
+            isFound = true;
+            for(int k = 0; k < 3; k++)
+                tempArr[k] = classRosterArray[i].getDaysToCompleteCourses()[k];
+            cout << "Student " << classRosterArray[i].getStudentID() << " " << classRosterArray[i].getFirstName() << " has an average of: ";
+        }
+    }
    
-   for(int i = 0; i < classSize; i++){ //find correct student
-      if((classRosterArray[i].getStudentID() == studentID) /*&& classRosterArray[i] != nullptr*/){
-          isFound = true;
-          for(int k = 0; k < 3; k++)
-            tempArr[k] = classRosterArray[i].getDaysToCompleteCourses()[k];
-          cout << "Student " << classRosterArray[i].getStudentID() << " " << classRosterArray[i].getFirstName() << " has an average of: ";
-      }
-   }
-   
-   if (isFound) {
-       for (int j = 0; j < 3; j++) {
-           average += tempArr[j];
-       }
-       average /= 3;
+    if (isFound) {
+        for (int j = 0; j < 3; j++) {
+            average += tempArr[j];
+        }
+        average /= 3;
 
-       cout << average << endl;
-   }
-   else {
-       cout << "Student not found for average." << endl;
-   }
+        cout << average << endl;
+    } else {
+        cout << "Student not found for average." << endl;
+    }
 }
-void Roster::printInvalidEmails() {
-   //add email validation. should have @ and . but no spaces
+
+void Roster::printInvalidEmails() { // Email validation. should have '@' and '.' but no spaces
    for(int i = 0; i < classSize; i++){ // check each student
       //parse email string, maybe booleans?
       bool emailAt = false, emailPeriod = false, emailSpace = false;
@@ -119,7 +86,7 @@ void Roster::printInvalidEmails() {
          else if(email.at(j) == ' ')
             emailSpace = true;
       }
-      if(!((emailAt && emailPeriod) && !emailSpace))
+      if(!((emailAt && emailPeriod) && !emailSpace)) // If has spaces or no '@' or no '.'
          cout << "Student " << classRosterArray[i].getStudentID() << " has an invalid email: " << email << endl;
    }
 }
